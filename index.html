@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Mẫu</title>
+    <style>
+        .product-container {
+            text-align: center;
+            margin: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: border 0.3s ease; /* Thêm hiệu ứng cho viền */
+        }
+        .product-container img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .product-container:hover img {
+            transform: scale(1.1);
+        }
+        .product-container:hover {
+            border: 3px solid #ff5722; /* Thêm màu viền khi hover */
+        }
+        .buy-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            display: none;
+        }
+        .product-container:hover .buy-text {
+            display: block;
+        }
+        /* Bố cục cho sản phẩm khi có 5 sản phẩm mỗi hàng */
+        .product-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 sản phẩm mỗi hàng */
+            gap: 20px; /* khoảng cách giữa các sản phẩm */
+            justify-items: center; /* căn giữa các sản phẩm */
+        }
+        
+        /* Bố cục khi có ít hơn hoặc bằng 5 sản phẩm mỗi hàng */
+        @media (max-width: 1200px) {
+            .product-row {
+                grid-template-columns: repeat(4, 1fr); /* tối đa 4 sản phẩm mỗi hàng */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .product-row {
+                grid-template-columns: repeat(3, 1fr); /* tối đa 3 sản phẩm mỗi hàng */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .product-row {
+                grid-template-columns: repeat(2, 1fr); /* tối đa 2 sản phẩm mỗi hàng */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .product-row {
+                grid-template-columns: 1fr; /* 1 sản phẩm mỗi hàng */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div>
+                <img src="https://s1cdn.vnecdn.net/vnexpress/restruct/i/v9540/logo_default.jpg" alt="Logo" style="max-height: 130px; max-width: 100%; object-fit: contain;">
+            </div>
+            <div style="margin-left: auto;">
+                <img src="https://img.freepik.com/premium-vector/big-sale-special-offer-template-pattern_284645-1773.jpg?w=1380" alt="Quảng cáo" style="height: 100px; width: auto; object-fit: contain;">
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu điều hướng -->
+    <nav>
+        <ul style="display: flex; justify-content: center; background-color: #d32f2f; padding: 10px; list-style: none;">
+            <li style="margin: 0 15px;"><a href="#home" style="color: white; text-decoration: none;">Trang chủ</a></li>
+            <li style="margin: 0 15px;"><a href="#about" style="color: white; text-decoration: none;">Giới thiệu</a></li>
+            <li style="margin: 0 15px;"><a href="#news" style="color: white; text-decoration: none;">Tin tức</a></li>
+            <li style="margin: 0 15px;"><a href="#products" style="color: white; text-decoration: none;">Sản phẩm</a></li>
+            <li style="margin: 0 15px;"><a href="#contact" style="color: white; text-decoration: none;">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Nội dung chính -->
+    <main>
+        <div>
+            <img src="https://img.freepik.com/premium-photo/panoramic-view-from-mount-elbrus-northern-caucasus-mountains-russia_272335-1129.jpg?w=1380" alt="Hình nền chính" style="width: 100%; max-height: 300px;">
+        </div>
+        <section class="product-row">
+            <!-- Sản phẩm 1 -->
+            <div class="product-container">
+                <img src="https://xmagic.vn/upload/post/chup-ao-thun-1678.jpg" alt="Sản phẩm 1">
+                <div class="buy-text">100 vnd</div>
+            </div>
+            <!-- Sản phẩm 2 -->
+            <div class="product-container">
+                <img src="https://xmagic.vn/upload/post/chup-ao-thun-1678.jpg" alt="Sản phẩm 2">
+                <div class="buy-text">100 vnd</div>
+            </div>
+            <!-- Sản phẩm 3 -->
+            <div class="product-container">
+                <img src="https://down-vn.img.susercontent.com/file/vn-11134201-23030-rjchzzy6niov5a" alt="Sản phẩm 3">
+                <div class="buy-text">500 vnd</div>
+            </div>
+            <!-- Sản phẩm 4 -->
+            <div class="product-container">
+                <img src="https://down-vn.img.susercontent.com/file/vn-11134201-23030-noxtdry6niov17" alt="Sản phẩm 4">
+                <div class="buy-text">300 vnd</div>
+            </div>
+            <!-- Sản phẩm 5 -->
+            <div class="product-container">
+                <img src="https://down-vn.img.susercontent.com/file/a8934dbb4e0008d3a018a77be66e5973" alt="Sản phẩm 5">
+                <div class="buy-text">200 vnd</div>
+            </div>
+            <!-- Sản phẩm 6 -->
+            <div class="product-container">
+                <img src="https://down-vn.img.susercontent.com/file/8f6e9b45ca8101b85fecced8569458b4" alt="Sản phẩm 6">
+                <div class="buy-text">1.000.000 vnd</div>
+            </div>
+            <!-- Sản phẩm 7 -->
+            <div class="product-container">
+                <img src="https://down-vn.img.susercontent.com/file/deac8c8e2a67d4e09c102861b7559063" alt="Sản phẩm 7">
+                <div class="buy-text">8.000.000 vnd</div>
+            </div>
+            <!-- Sản phẩm 8 -->
+            <div class="product-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIydtTMug8I8TMlYNVcG6_qqz0UttZnvs5b-5PiAkEzUKijpc-j0q5UVEABL4XpTjc25k&usqp=CAU" alt="Sản phẩm 8">
+                <div class="buy-text">150 vnd</div>
+            </div>
+            <!-- Sản phẩm 9 -->
+            <div class="product-container">
+                <img src="https://down-vn.img.susercontent.com/file/9acbad534903dd02b0ade2f9274a558e" alt="Sản phẩm 9">
+                <div class="buy-text">10.000.000 vnd</div>
+            </div>
+            <!-- Sản phẩm 10 -->
+            <div class="product-container">
+                <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lus17o2f01si92" alt="Sản phẩm 10">
+                <div class="buy-text">6.000.000 vnd</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
+        <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+            <div>
+                <h4>Về chúng tôi</h4>
+                <p>Thông tin chung</p>
+                <p>Chính sách bảo mật</p>
+            </div>
+            <div>
+                <h4>Dành cho người mua</h4>
+                <p>Quy định sử dụng</p>
+                <p>Hướng dẫn mua hàng</p>
+            </div>
+            <div>
+                <h4>Dành cho người bán</h4>
+                <p>Quy định bán hàng</p>
+                <p>Hướng dẫn đăng sản phẩm</p>
+            </div>
+        </div>
+        <p>&copy; 2024 Trang web mẫu</p>
+    </footer>
+</body>
+</html>
